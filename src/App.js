@@ -17,7 +17,7 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/" element={<Home />}></Route>
       <Route path="/home" element={<Home />}></Route>
-      {/* react v6.4.1 */}
+
       <Route
         path="/phone/:phoneId"
         loader={async ({ params }) => {
@@ -33,6 +33,7 @@ const router = createBrowserRouter(
         }}
         element={<SinglePhoneDetail />}
       ></Route>
+
       <Route path="*" element={<NotFound />}></Route>
     </Route>
   )
