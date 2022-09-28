@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 
 const SinglePhoneDetail = () => {
-  const { phoneId } = useParams();
-  const [phoneDetail, setPhoneDetail] = useState([]);
+  // const { phoneId } = useParams();
+  const data = useLoaderData();
+  // console.log(data);
+  // const [phoneDetail, setPhoneDetail] = useState([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/phones/${phoneId}`)
-      .then((res) => res.json())
-      .then((data) => setPhoneDetail(data));
-  }, [phoneId]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/phones/${phoneId}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setPhoneDetail(data));
+  // }, [phoneId]);
 
   return (
     // used boostrap card horizontal
@@ -22,7 +23,7 @@ const SinglePhoneDetail = () => {
         <div className="row g-0">
           <div className="col-md-4">
             <img
-              src={phoneDetail?.image}
+              src={data?.image}
               className="img-fluid rounded-start"
               alt="..."
             />
@@ -30,9 +31,9 @@ const SinglePhoneDetail = () => {
           {/* phone details */}
           <div className="col-md-8">
             <div className="card-body text-start">
-              <h4 className="card-title">{phoneDetail?.name}</h4>
-              <h5 className="card-title">Price: ${phoneDetail?.price}</h5>
-              <p className="card-text">{phoneDetail.description}</p>
+              <h4 className="card-title">{data?.name}</h4>
+              <h5 className="card-title">Price: ${data?.price}</h5>
+              <p className="card-text">{data.description}</p>
               <NavLink to="/" className="btn btn-dark">
                 Go back
               </NavLink>
