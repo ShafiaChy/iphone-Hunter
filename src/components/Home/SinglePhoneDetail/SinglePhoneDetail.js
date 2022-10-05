@@ -1,16 +1,6 @@
 import { NavLink, useLoaderData } from "react-router-dom";
 
 const SinglePhoneDetail = () => {
-  // const { phoneId } = useParams();
-  // console.log(data);
-  // const [phoneDetail, setPhoneDetail] = useState([]);
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/phones/${phoneId}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setPhoneDetail(data));
-  // }, [phoneId]);
-
-  // react v6.4.1 starts here
   const data = useLoaderData();
   return (
     // used boostrap card horizontal
